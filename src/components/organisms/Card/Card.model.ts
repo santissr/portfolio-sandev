@@ -6,5 +6,5 @@ export interface CardM {
   tech?: ReactNode;
   urlImage?: string;
   viewGitHub: string;
-  viewServer: string;
+  viewServer?: string;
 }

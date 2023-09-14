@@ -35,7 +35,11 @@ export const WhoIAm = () => {
           passionate Front-End Web Developer from Colombia
         </Text>
         <Wrap width="fit-content" gap="1.8rem">
-          <Link href="https://github.com/santissr">
+          <Link
+            href="https://github.com/santissr"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Wrap
               cursor="pointer"
               padding="0.5rem"
@@ -47,7 +51,11 @@ export const WhoIAm = () => {
               <GitHubSvg />
             </Wrap>
           </Link>
-          <Link href="https://www.linkedin.com/in/santiago-sanchez-restrepo-8b7002290/">
+          <Link
+            href="https://www.linkedin.com/in/santiago-sanchez-restrepo-8b7002290/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Wrap
               cursor="pointer"
               width="fit-content"

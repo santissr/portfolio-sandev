@@ -20,6 +20,7 @@ interface WrapI {
   borderBottom?: string;
   overflow?: string;
 
+  media?: string;
   mediaDisplay?: string;
   mediaFlexDirection?: string;
 }
@@ -56,9 +57,12 @@ export const WrapTag = styled.div<WrapI>`
   ${({ borderBottom }) =>
     borderBottom ? `border-bottom: ${borderBottom}` : null};
 
-  @media screen and (min-width: 744px) {
-    ${({ mediaDisplay }) => (mediaDisplay ? `display: ${mediaDisplay}` : null)};
-    ${({ mediaFlexDirection }) =>
-      mediaFlexDirection ? `flex-direction: ${mediaFlexDirection}` : null};
-  }
+  ${({
+    media = "744px",
+    mediaDisplay,
+    mediaFlexDirection,
+  }) => `@media screen and (min-width: ${media}) {
+    ${mediaDisplay ? `display: ${mediaDisplay}` : null};
+    ${mediaFlexDirection ? `flex-direction: ${mediaFlexDirection}` : null};
+  }`}
 `;

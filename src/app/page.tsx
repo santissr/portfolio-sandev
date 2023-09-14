@@ -8,14 +8,16 @@ import "@/styles/global.styles.css";
 import { Main } from "@/components/sections/Main/Main";
 import { AboutMe } from "@/components/sections/AboutMe/AboutMe";
 import { ProjectsSection } from "@/components/sections/ProjectsSection/ProjectsSection";
+import { ContactMe } from "@/components/sections/ContactMe/ContactMe";
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Main />
-      <AboutMe />
-      <ProjectsSection />
+      <Main id="/" />
+      <AboutMe id="about-me" />
+      <ProjectsSection id="projects" />
+      <ContactMe id="contact" />
     </>
   );
 }

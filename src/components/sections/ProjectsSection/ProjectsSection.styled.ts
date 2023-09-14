@@ -7,4 +7,6 @@ export const ProjectSectionTag = styled.section`
   align-items: center;
   gap: 1rem;
   align-self: stretch;
+
+  background: rgba(77, 183, 254, 0.2);
 `;

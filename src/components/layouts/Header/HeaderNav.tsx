@@ -9,7 +9,7 @@ const navBar = [
   },
   {
     text: "ABOUT",
-    url: "#about",
+    url: "#about-me",
   },
   {
     text: "PROJECTS",

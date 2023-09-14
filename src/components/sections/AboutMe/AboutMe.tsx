@@ -3,9 +3,13 @@ import { AboutMeTag } from "./AboutMe.styled";
 import { Wrap } from "@/components/atoms/Wrap/Wrap";
 import { Text } from "@/components/atoms/Text/Text";
 
-export const AboutMe = () => {
+interface AboutI {
+  id?: string;
+}
+
+export const AboutMe = ({ id }: AboutI) => {
   return (
-    <AboutMeTag>
+    <AboutMeTag id={id}>
       <Wrap width="fit-content" borderBottom="1px solid #000">
         <Title text="About Me" color="#007ACC" />
       </Wrap>

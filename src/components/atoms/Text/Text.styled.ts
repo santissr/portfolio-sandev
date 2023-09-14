@@ -10,6 +10,7 @@ interface TextTagI {
 
 export const TextTag = styled.p<TextTagI>`
   width: 100%;
+  height: fit-content;
 
   color: ${({ color }) => (color ? color : "#000")};
   text-align: ${({ textAlign }) => (textAlign ? textAlign : "center")};

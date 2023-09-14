@@ -16,17 +16,25 @@ export const Card = ({
   viewServer,
 }: CardM) => {
   return (
-    <CardTag>
+    <CardTag flexDirection="row" width="fit-content">
       <Wrap
         height="100%"
         flexDirection="column"
         alignItems="center"
         justifyContent="space-between"
+        gap="5.6rem"
       >
         <Title width="100%" text={title} color="#000" />
         <Text text={text} fontWeight="400" />
-        <Text text="Tech used" fontSize="1.9rem" fontWeight="700" />
-        <Wrap justifyContent="space-between">{tech}</Wrap>
+        <Wrap
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="space-between"
+          height="100%"
+        >
+          <Text text="Tech used" fontSize="1.9rem" fontWeight="700" />
+          <Wrap justifyContent="space-between">{tech}</Wrap>
+        </Wrap>
       </Wrap>
       <Wrap flexDirection="column" gap="1rem" alignItems="center">
         <Wrap
@@ -35,17 +43,33 @@ export const Card = ({
           width="26.6rem"
           height="22.7rem"
         />
-        <Wrap width="fit-content">
-          <Link href={viewGitHub}>
-            <Wrap>
-              <GitHubSvg size="30" />
+        <Wrap width="fit-content" gap="1.7rem" justifyContent="space-between">
+          <Link href={viewGitHub} rel="noopener noreferrer" target="_blank">
+            <Wrap
+              cursor="pointer"
+              padding="0.5rem"
+              width="fit-content"
+              borderRadius="2rem"
+              backGround="#FFF"
+              boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
+            >
+              <GitHubSvg />
             </Wrap>
           </Link>
-          <Link href={viewServer}>
-            <Wrap>
-              <ViewServer />
-            </Wrap>
-          </Link>
+          {viewServer ? (
+            <Link href={viewServer} rel="noopener noreferrer" target="_blank">
+              <Wrap
+                cursor="pointer"
+                padding="0.5rem"
+                width="fit-content"
+                borderRadius="2rem"
+                backGround="#FFF"
+                boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
+              >
+                <ViewServer />
+              </Wrap>
+            </Link>
+          ) : null}
         </Wrap>
       </Wrap>
     </CardTag>
