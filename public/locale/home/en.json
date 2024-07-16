@@ -1,0 +1,73 @@
+{
+  "header": {
+    "navBar": [
+      {
+        "text": "Home",
+        "url": "/"
+      },
+      {
+        "text": "Projects",
+        "url": "/#projects"
+      },
+      {
+        "text": "Contact",
+        "url": "/linktree"
+      }
+    ]
+  },
+  "main": {
+    "firstText": "Hello! I'm ",
+    "name": "Santiago Sanchez Restrepo",
+    "secondText": " a passionate Front-End Web Developer from Colombia with over 2 years of experience working with technologies such as..."
+  },
+  "aboutMe": {
+    "title": "About me",
+    "text": "I am an enthusiastic developer with two years of experience in the world of web development. My journey in Front-End development began with a deep fascination for how web technologies can transform user experiences. Since then, I have been immersed in continuous exploration and learning. In my career, I have had the opportunity to work with cutting-edge technologies, including blockchain. I have integrated Next.js with Solana and used Web3Auth to develop a points system application, thus expanding my experience in web3 solutions. My goal is to become an expert in creating attractive and highly functional web interfaces."
+  },
+  "projects": {
+    "title": "Projects",
+    "text": "These are my most relevant projects",
+    "projectsCard": [
+      {
+        "title": "YTA-PAGE🏠",
+        "text": "This project was carried out for the real estate company YTA, where I was responsible for both the design and implementation of the website, handling exclusively the front-end part. (Using Vue.js)",
+        "tech": [
+          "TypeScript",
+          "Vue",
+          "Figma"
+        ],
+        "image": "YTA",
+        "viewServer": "https://ytacompraryvender.com.co/"
+      },
+      {
+        "title": "EPM Project 📝",
+        "text": "A points system based on blockchain technology, utilizing Web3Auth for authentication with Ethereum environment wallets.",
+        "tech": [
+          "TypeScript",
+          "Next",
+          "Figma"
+        ],
+        "image": "EPM",
+        "viewServer": "https://dev.puntosnova.com"
+      },
+      {
+        "title": "AVENFOR Web 🌐",
+        "text": "Developer of the company's main website, responsible for creating the code for internationalization, as well as for this portfolio website.",
+        "tech": [
+          "TypeScript",
+          "Next",
+          "Figma"
+        ],
+        "image": "AVENFOR",
+        "viewServer": "https://dev.avenfor.com"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "text": "Would you like to contact me?",
+    "textButton": "Contact"
+  }
+}
+
+

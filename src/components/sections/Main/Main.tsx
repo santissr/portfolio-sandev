@@ -1,16 +1,17 @@
-import { WhoIAm } from "@/components/organisms/WhoIAm/WhoIAm";
-import { MainTag } from "./Main.styled";
-import { Skills } from "@/components/organisms/Skills/Skills";
+import { WhoIAm } from '@/components/organisms/WhoIAm/WhoIAm';
+import { Skills } from '@/components/organisms/Skills/Skills';
+import styles from './Main.module.css';
 
 interface MainI {
   id?: string;
+  lang: any;
 }
 
-export const Main = ({ id }: MainI) => {
+export const Main = ({ id, lang }: MainI) => {
   return (
-    <MainTag id={id}>
-      <WhoIAm />
+    <main className={styles.main} id={id}>
+      <WhoIAm lang={lang} />
       <Skills />
-    </MainTag>
+    </main>
   );
 };

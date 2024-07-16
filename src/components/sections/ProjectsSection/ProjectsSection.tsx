@@ -1,19 +1,20 @@
-import { Wrap } from "@/components/atoms/Wrap/Wrap";
-import { ProjectSectionTag } from "./ProjectsSection.styled";
-import { Title } from "@/components/atoms/Title/Title";
-import { ContainerCards } from "@/components/molecules/ContainerCards/ContainerCards";
+import { ContainerCards } from '@/components/molecules/ContainerCards/ContainerCards';
+import styles from './ProjectSection.module.css';
+import { LangM } from '@/interfaces/Dictionaries.model';
 
 interface ProjectsI {
   id?: string;
+  lang: LangM;
 }
 
-export const ProjectsSection = ({ id }: ProjectsI) => {
+export const ProjectsSection = ({ id, lang }: ProjectsI) => {
   return (
-    <ProjectSectionTag id={id}>
-      <Wrap width="fit-content" borderBottom="1px solid #000">
-        <Title text="Projects" color="#007ACC" />
-      </Wrap>
-      <ContainerCards />
-    </ProjectSectionTag>
+    <section className={styles.section} id={id}>
+      <div className={styles.containerTitle}>
+        <h2 className={styles.title}>{lang.projects.title}</h2>
+        <h3 className={styles.text}>{lang.projects.text}</h3>
+      </div>
+      <ContainerCards lang={lang} />
+    </section>
   );
 };

@@ -1,0 +1,138 @@
+.containerPopUp {
+    overflow: hidden;
+    width: 0;
+    transition: width 250ms ease-in-out;
+    height: 100vh;
+    background: #060606;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    /*border-radius: 0 0 0 2rem;*/
+
+
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.popUpIsOpen {
+    width: 35rem;
+    padding: 2rem;
+}
+
+.textQuestion {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.textOpacity {
+    opacity: 0;
+    transition: opacity 125ms ease-in;
+}
+
+
+.containerPopUp.popUpIsOpen .textOpacity {
+    opacity: 1;
+    width: fit-content;
+    transition-delay: 250ms;
+}
+
+.containerPopUp:not(.popUpIsOpen) .textOpacity {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 1s;
+    transition: opacity 125ms ease-out;
+}
+
+.containerList {
+    display: none;
+    width: 100%;
+
+    justify-content: center;
+}
+
+.containerList ul {
+    list-style: none;
+    padding: 2rem;
+    width: fit-content;
+    justify-content: center;
+}
+
+.containerList ul li {
+    width: 12rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    border-radius: 1rem;
+    background: white;
+    color: black;
+    font-size: 1.8rem;
+    margin-top: 1rem;
+
+    padding: 1rem;
+}
+
+.containerListOpacity {
+    opacity: 0;
+    transition: opacity 125ms ease-in;
+}
+
+.containerPopUp.popUpIsOpen .containerListOpacity {
+    opacity: 1;
+    width: fit-content;
+    transition-delay: 250ms;
+}
+
+.containerPopUp:not(.popUpIsOpen) .containerListOpacity {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 1s;
+    transition: opacity 125ms ease-out;
+}
+
+.containerList ul li:hover {
+    background: #007ACC;
+    color: #FFFFFF;
+}
+
+.link {
+    width: fit-content;
+    text-decoration: none;
+}
+
+.containerTexts {
+    opacity: 0;
+    transition: opacity 125ms ease-in;
+}
+
+.containerPopUp.popUpIsOpen .containerTexts {
+    opacity: 1;
+    width: fit-content;
+    transition-delay: 250ms;
+}
+
+.containerPopUp:not(.popUpIsOpen) .containerTexts {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 1s;
+    transition: opacity 125ms ease-out;
+}
+
+.langs {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.langs:hover {
+    color: #007ACC;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 631px) {
+    .containerList {
+        display: flex;
+    }
+}

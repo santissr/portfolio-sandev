@@ -1,77 +1,50 @@
-import { Title } from "@/components/atoms/Title/Title";
-import { CardTag } from "./Card.styled";
-import { Text } from "@/components/atoms/Text/Text";
-import { Wrap } from "@/components/atoms/Wrap/Wrap";
-import { GitHubSvg } from "@/components/atoms/GitHubSvg/GitHubSvg";
-import Link from "next/link";
-import { ViewServer } from "@/components/atoms/ViewServer/ViewServer";
-import { CardM } from "./Card.model";
+import { GitHubSvg } from '@/components/atoms/GitHubSvg/GitHubSvg';
+import Link from 'next/link';
+import { ViewServer } from '@/components/atoms/ViewServer/ViewServer';
+import { CardM } from './Card.model';
+import styles from './Card.module.css';
+import Image from 'next/image';
 
 export const Card = ({
-  title,
-  text,
-  tech,
-  urlImage,
-  viewGitHub,
-  viewServer,
-}: CardM) => {
+                       title,
+                       text,
+                       tech,
+                       urlImage,
+                       viewGitHub,
+                       viewServer,
+                     }: CardM) => {
   return (
-    <CardTag flexDirection="row" width="fit-content">
-      <Wrap
-        height="100%"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="space-between"
-        gap="5.6rem"
-      >
-        <Title width="100%" text={title} color="#000" />
-        <Text text={text} fontWeight="400" />
-        <Wrap
-          flexDirection="column"
-          alignItems="center"
-          justifyContent="space-between"
-          height="100%"
-        >
-          <Text text="Tech used" fontSize="1.9rem" fontWeight="700" />
-          <Wrap justifyContent="space-between">{tech}</Wrap>
-        </Wrap>
-      </Wrap>
-      <Wrap flexDirection="column" gap="1rem" alignItems="center">
-        <Wrap
-          isImage="yes"
-          urlImage={urlImage}
-          width="26.6rem"
-          height="22.7rem"
+    <article className={styles.containerCard}>
+      <div className={styles.containerTexts}>
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.text}>{text}</p>
+        <div className={styles.containerTechsUsed}>
+          <p className={styles.textTechUsed}>Tech Used</p>
+          <div className={styles.containerSvgs}>{tech}</div>
+        </div>
+      </div>
+      <div className={styles.containerImageAndLinks}>
+        <Image alt={'Imagen del proyecto'}
+               src={urlImage ?? ''}
+               width={300}
+               height={138}
         />
-        <Wrap width="fit-content" gap="1.7rem" justifyContent="space-between">
-          <Link href={viewGitHub} rel="noopener noreferrer" target="_blank">
-            <Wrap
-              cursor="pointer"
-              padding="0.5rem"
-              width="fit-content"
-              borderRadius="2rem"
-              backGround="#FFF"
-              boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-            >
+        <div className={styles.containerLinks}>
+          {viewGitHub && <Link href={viewGitHub} rel="noopener noreferrer" target="_blank">
+            <div className={styles.containerView}>
               <GitHubSvg />
-            </Wrap>
-          </Link>
+            </div>
+          </Link>}
           {viewServer ? (
             <Link href={viewServer} rel="noopener noreferrer" target="_blank">
-              <Wrap
-                cursor="pointer"
-                padding="0.5rem"
-                width="fit-content"
-                borderRadius="2rem"
-                backGround="#FFF"
-                boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-              >
+              <div className={styles.containerView}>
                 <ViewServer />
-              </Wrap>
+              </div>
             </Link>
           ) : null}
-        </Wrap>
-      </Wrap>
-    </CardTag>
+        </div>
+
+      </div>
+    </article>
   );
 };

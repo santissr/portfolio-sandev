@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    padding: 0rem 1.6rem 5rem 1.6rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    align-self: stretch;
+}
+
+.daddyContainer {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 61.2rem;
+}
+
+.containerTitle {
+    width: fit-content;
+    border-bottom: 1px solid #000;
+    justify-content: center;
+}
+
+.title {
+    color: #007ACC;
+    text-align: center;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+}
+
+.text {
+    font-size: 1.6rem;
+}
+
+.hand {
+    rotate: 180deg;
+}
+
+.btnContact {
+    padding: 2rem;
+    border-radius: 1rem;
+    background: #007ACC;
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+}

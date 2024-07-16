@@ -1,83 +1,48 @@
-import { Title } from "@/components/atoms/Title/Title";
-import { WhoIAmTag } from "./WhoIAm.styled";
-import { Wrap } from "@/components/atoms/Wrap/Wrap";
-import santiFront from "@/assets/images/santiFront.jpg";
-import { Text } from "@/components/atoms/Text/Text";
-import { GitHubSvg } from "@/components/atoms/GitHubSvg/GitHubSvg";
-import { LinkedinSvg } from "@/components/atoms/LinkedinSvg/LinkedinSvg";
-import Link from "next/link";
+import styles from './WhoIAm.module.css';
+import santiFront from '@/assets/images/SANTIAGO_IMAGE.png';
+import { GitHubSvg } from '@/components/atoms/GitHubSvg/GitHubSvg';
+import { LinkedinSvg } from '@/components/atoms/LinkedinSvg/LinkedinSvg';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export const WhoIAm = () => {
+export const WhoIAm = ({ lang }: { lang: any }) => {
   return (
-    <WhoIAmTag>
-      <Wrap
-        flexDirection="column"
-        alignItems="center"
-        gap="3rem"
-        width="28.7rem"
+    <div className={styles.container}>
+      <div className={styles.containerText}
       >
-        <Title
-          text="Front-End Web Developer"
-          textBackground="linear-gradient(270deg, #27609E 19.1%, #000 100%)"
-          titleMain="yes"
+        <Image src={santiFront.src}
+               alt={'Foto de Santiago'}
+               width={1098}
+               height={500}
+               className={styles.photo}
         />
-        <Wrap
-          mediaDisplay="none"
-          isImage="yes"
-          urlImage={santiFront.src}
-          width="16.8rem"
-          height="16.8rem"
-          borderRadius="6.4rem"
-        />
-        <Text letterSpacing="yes" color="#040404" fontWeight="300">
-          Hello! I&apos;m{" "}
-          <span style={{ color: "#27609E" }}>Santiago Sanchez Restrepo</span>, a
-          passionate Front-End Web Developer from Colombia
-        </Text>
-        <Wrap width="fit-content" gap="1.8rem">
+        <div className={styles.containerLinks}>
           <Link
             href="https://github.com/santissr"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Wrap
-              cursor="pointer"
-              padding="0.5rem"
-              width="fit-content"
-              borderRadius="2rem"
-              backGround="#FFF"
-              boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-            >
+            <div className={styles.containerSvgs}>
               <GitHubSvg />
-            </Wrap>
+            </div>
           </Link>
           <Link
             href="https://www.linkedin.com/in/santiago-sanchez-restrepo-8b7002290/"
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Wrap
-              cursor="pointer"
-              width="fit-content"
-              padding="0.5rem"
-              borderRadius="2rem"
-              backGround="#FFF"
-              boxShadow="0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
-            >
+            <div className={styles.containerSvgs}>
               <LinkedinSvg />
-            </Wrap>
+            </div>
           </Link>
-        </Wrap>
-      </Wrap>
-      <Wrap
-        display="none"
-        mediaDisplay="block"
-        isImage="yes"
-        urlImage={santiFront.src}
-        width="16.8rem"
-        height="16.8rem"
-        borderRadius="6.4rem"
-      />
-    </WhoIAmTag>
+        </div>
+        <p className={styles.text}>
+          {lang.main.firstText}
+          <span style={{ color: '#27609E' }}>{lang.main.name}</span>
+          {lang.main.secondText}
+        </p>
+
+      </div>
+    </div>
   );
 };

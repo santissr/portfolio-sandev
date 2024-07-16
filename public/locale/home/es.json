@@ -1,0 +1,73 @@
+{
+  "header": {
+    "navBar": [
+      {
+        "text": "Inicio",
+        "url": "/"
+      },
+      {
+        "text": "Proyectos",
+        "url": "/#projects"
+      },
+      {
+        "text": "Contacto",
+        "url": "/linktree"
+      }
+    ]
+  },
+  "main": {
+    "firstText": "Hola! Soy ",
+    "name": "Santiago Sánchez Restrepo",
+    "secondText": ", un apasionado desarrollador web Front-End de Colombia con más de 2 años de experiencia trabajando con tecnologías como..."
+  },
+  "aboutMe": {
+    "title": "Un poco de mi",
+    "text": "Soy un desarrollador entusiasta con dos años de experiencia en el mundo del desarrollo web. Mi viaje en el desarrollo Front-End comenzó con una profunda fascinación por cómo las tecnologías web pueden transformar la experiencia del usuario. Desde entonces, he estado inmerso en la exploración y el aprendizaje continuo. En mi carrera, he tenido la oportunidad de trabajar con tecnologías de vanguardia, incluyendo blockchain. He integrado Next.js con Solana y he utilizado Web3Auth para desarrollar una aplicación de sistema de puntos, ampliando así mi experiencia en soluciones web3. Mi objetivo es convertirme en un experto en la creación de interfaces web atractivas y altamente funcionales."
+  },
+  "projects": {
+    "title": "Proyectos",
+    "text": "Estos son de mis proyectos mas relevantes",
+    "projectsCard": [
+      {
+        "title": "YTA-PAGE🏠",
+        "text": "Este proyecto se llevó a cabo para la empresa inmobiliaria YTA, donde fui responsable tanto del diseño como de la implementación del sitio web, encargándome exclusivamente de la parte del front-end. (Con Vue.js)",
+        "tech": [
+          "TypeScript",
+          "Vue",
+          "Figma"
+        ],
+        "image": "YTA",
+        "viewServer": "https://ytacompraryvender.com.co/"
+      },
+      {
+        "title": "EPM Project 📝",
+        "text": "Un sistema de puntos basado en tecnología blockchain, que utiliza Web3Auth para la autenticación con billeteras del entorno de Ethereum.",
+        "tech": [
+          "TypeScript",
+          "Next",
+          "Figma"
+        ],
+        "image": "EPM",
+        "viewServer": "https://dev.puntosnova.com"
+      },
+      {
+        "title": "AVENFOR Web 🌐",
+        "text": "Desarrollador del sitio web principal de la empresa, encargado de crear el código para la internacionalización, así como para este sitio web de portafolio.",
+        "tech": [
+          "TypeScript",
+          "Next",
+          "Figma"
+        ],
+        "image": "AVENFOR",
+        "viewServer": "https://dev.avenfor.com"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactar",
+    "text": "¿Te gustaria contactarme?",
+    "textButton": "Contactar"
+  }
+}
+
+

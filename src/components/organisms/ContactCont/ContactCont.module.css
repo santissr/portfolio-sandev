@@ -1,0 +1,28 @@
+.container {
+    width: 100%;
+    max-width: 38.5rem;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.secondContainer {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.thirdContainer {
+    width: 100%;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.text {
+    font-size: 1.8rem;
+    font-weight: 400;
+
+}

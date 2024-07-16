@@ -1,49 +1,22 @@
-import { HeaderNavTag, LiTag, StyledLink, UlTag } from "./HeaderNav.styled";
-import { HomeSvg } from "@/components/atoms/HomeSvg/HomeSvg";
-import { ContactSvg } from "@/components/atoms/ContactSvg/ContactSvg";
+import styles from './HeaderNav.module.css';
+import Link from 'next/link';
 
-const navBar = [
-  {
-    text: "HOME",
-    url: "/",
-  },
-  {
-    text: "ABOUT",
-    url: "#about-me",
-  },
-  {
-    text: "PROJECTS",
-    url: "#projects",
-  },
-  {
-    text: "CONTACT",
-    url: "#contact",
-  },
-];
 
-export const HeaderNav = () => {
+export const HeaderNav = ({ locale, lang }: { locale: 'es' | 'en'; lang: any }) => {
   return (
-    <HeaderNavTag>
-      <UlTag>
-        <LiTag mediaDisplay="none">
-          <StyledLink href="/">
-            <HomeSvg />
-          </StyledLink>
-        </LiTag>
-        {navBar.map(({ text, url }) => (
-          <LiTag
-            key={text}
-            display={text === "HOME" || text === "CONTACT" ? "none" : "flex"}
-          >
-            <StyledLink href={url}>{text}</StyledLink>
-          </LiTag>
-        ))}
-        <LiTag mediaDisplay="none">
-          <StyledLink href="#contact">
-            <ContactSvg />
-          </StyledLink>
-        </LiTag>
-      </UlTag>
-    </HeaderNavTag>
+    <nav className={styles.nav}>
+      <ul className={styles.ul}>
+        {lang.header.navBar.map(({ text, url }: { text: string, url: string }) => {
+
+          const href = `/${locale === 'es' ? 'es' : locale}${url}`;
+
+          return (
+            <li className={styles.li} key={text}>
+              <Link locale={locale} className={styles.link} href={href}>{text}</Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 };

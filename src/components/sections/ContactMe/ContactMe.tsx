@@ -1,32 +1,28 @@
-import { Wrap } from "@/components/atoms/Wrap/Wrap";
-import { ContactMeTag } from "./ContactMe.styled";
-import { Title } from "@/components/atoms/Title/Title";
-import { Text } from "@/components/atoms/Text/Text";
-import { ContactCont } from "@/components/organisms/ContactCont/ContactCont";
+import styles from './ContactMe.module.css';
+import Link from 'next/link';
+import { HandUp } from '@/svgs/HandUp';
+import { LangM } from '@/interfaces/Dictionaries.model';
 
 interface ContactI {
   id?: string;
+  locale?: string;
+  lang: LangM;
 }
 
-export const ContactMe = ({ id }: ContactI) => {
+export const ContactMe = ({ id, locale, lang }: ContactI) => {
   return (
-    <ContactMeTag id={id}>
-      <Wrap
-        flexDirection="column"
-        alignItems="center"
-        gap="2rem"
-        maxWidth="61.2rem"
+    <section className={styles.container} id={id}>
+      <div className={styles.daddyContainer}
       >
-        <Wrap
-          width="fit-content"
-          borderBottom="1px solid #000"
-          justifyContent="center"
-        >
-          <Title text="Contact" color="#007ACC" />
-        </Wrap>
-        <Text text="If you are interested in my profile, please do not hesitate to get in touch with me. I am available for a conversation or interview at any convenient time. I look forward to the opportunity to work together and contribute value to your company." />
-      </Wrap>
-      <ContactCont />
-    </ContactMeTag>
+        <div className={styles.containerTitle}>
+          <h2 className={styles.title}>{lang.contact.title}</h2>
+        </div>
+        <p className={styles.text}>{lang.contact.text}</p>
+      </div>
+      <HandUp className={styles.hand} />
+      <Link className={styles.btnContact} href={`${locale}/linktree`}>
+        {lang.contact.textButton}
+      </Link>
+    </section>
   );
 };
